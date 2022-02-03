@@ -20,7 +20,7 @@ Você vai criar uma aplicação de cadastro de pedidos de compra com as seguinte
 
 A modelagem inicial para a implementação solução é a seguinte:
 
-[<img src="img/1.png" title="" alt="" width="701">]
+<img src="img/1.png" title="" alt="">
 
 Neste exemplo estou usando sqlite, mas poderá ser usado Mysql ou Postgre.
 
