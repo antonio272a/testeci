@@ -42,7 +42,6 @@ Devem ser utilizadas as seguintes tecnologias:
 - Crie uma documentação de como fazer o seu projeto executar
 - Depois de finalizado, enviar o link do seu repositório para felipe@newbgp.com.br ou whats 13988230556 ( Felipe )
 - Preencha o formulário https://forms.gle/oR8zThqgAFS5SckD7 e envie seu currículo.
-- 
 
 ## Bônus
 
