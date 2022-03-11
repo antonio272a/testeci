@@ -17,13 +17,20 @@ const getSaleByKeyModel = async (key) => {
 }
 
 const getSaleByKeyWithProductModel = async (key) => {
-  const query = `SELECT s.chave_nfe, s.produto_id, s.quantidade, s.valor, p.nome as produto
+  const query = `SELECT s.chave_nfe, s.produto_id, s.quantidade, s.valor, s.estado_id, p.nome as produto
   FROM Loja.pedidos s
   INNER JOIN Loja.produtos p
+  ON s.produto_id = p.id
   WHERE s.chave_nfe=?`;
   const [result] = await connection.execute(query, [key]);
   return result[0];
 };
+
+const getStatesModel = async () => {
+  const query = `SELECT id, nome FROM Loja.estados`;
+  const [result] = await connection.execute(query);
+  return result;
+} 
 
 const createSaleModel = async ({ key, productId, quantity, value, state }) => {
   const query = `INSERT INTO Loja.pedidos (chave_nfe, produto_id, quantidade, valor, estado_id)
@@ -56,4 +63,5 @@ module.exports = {
   updateSaleModel,
   getSaleByKeyModel,
   getSaleByKeyWithProductModel,
+  getStatesModel,
 };

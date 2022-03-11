@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 import Header from '../components/Header'
 import SaleCard from '../components/SaleCard';
 import { getAllSales } from '../services/sales';
@@ -19,7 +20,12 @@ function Sales() {
     <div>
       <Header />
       <main className="container d-flex flex-column align-items-center text-center">
-        <p className="fs-3 fw-bold my-3">Pedidos</p>
+        <div className='d-flex flex-column'>
+          <p className="fs-3 fw-bold my-3">Pedidos</p>
+          <Link className="btn btn-primary mb-3" to="/products/new">
+            Novo Pedido
+          </Link>
+        </div>
         <section
           className="d-flex flex-wrap justify-content-around border boder-2 border-dark p-4 mx-2 align-items-start w-100"
           style={{ minHeight: "100vh" }}

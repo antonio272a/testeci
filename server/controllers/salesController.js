@@ -5,6 +5,7 @@ const {
   updateSaleService,
   getSaleByKeyService,
   getSaleByKeyWithProductService,
+  getStatesService,
 } = require("../services/salesService");
 
 const getAllSales = async (_req, res) => {
@@ -16,6 +17,11 @@ const getSaleByKey = async (req, res) => {
   const { key } = req.params;
   const sale = await getSaleByKeyService(key);
   return res.status(200).json(sale);
+}
+
+const getStates = async(_req, res) => {
+  const states = await getStatesService();
+  res.status(200).json(states)
 }
 
 const getSaleByKeyWithProduct = async (req, res) => {
@@ -49,5 +55,6 @@ module.exports = {
   createSale,
   updateSale,
   getSaleByKey,
+  getStates,
   getSaleByKeyWithProduct,
 };

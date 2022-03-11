@@ -18,6 +18,17 @@ export const getSaleByKey = async (key) => {
   }
 };
 
+export const getStates = async () => {
+  const url = `http://localhost:${PORT}/states`;
+   try {
+     const response = await fetch(url);
+     const states = await response.json();
+     return states;
+   } catch (error) {
+     return;
+   }
+}
+
 export const getSaleWithProductByKey = async(key) => {
   const url = `http://localhost:${PORT}/sale-with-product/${key}`;
   try {
@@ -29,8 +40,17 @@ export const getSaleWithProductByKey = async(key) => {
   }
 } 
 
-export const updateSale = async (id, sale) => {
-  const url = `http://localhost:${PORT}/sales/${id}`;
+export const createSale = async (sale) => {
+  const url = `http://localhost:${PORT}/sales`;
+  await fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(sale),
+  });
+};
+
+export const updateSale = async (key, sale) => {
+  const url = `http://localhost:${PORT}/sales/${key}`;
   await fetch(url, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },

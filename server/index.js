@@ -4,7 +4,7 @@ const cors = require('cors')
 const bodyParser = require('body-parser')
 const rescue = require('express-rescue')
 const { getAllProducts, createProduct, deleteProduct, updateProduct, getProductById } = require('./controllers/productsController');
-const { getAllSales, deleteSale, createSale, updateSale, getSaleByKey, getSaleByKeyWithProduct } = require('./controllers/salesController');
+const { getAllSales, deleteSale, createSale, updateSale, getSaleByKey, getSaleByKeyWithProduct, getStates } = require('./controllers/salesController');
 const { startDB } = require('./models/createDb');
 
 
@@ -13,6 +13,8 @@ const app = express();
 app.use(bodyParser.json());
 
 app.use(cors());
+
+app.get('/states', rescue(getStates));
 
 app.get('/products', rescue(getAllProducts));
 

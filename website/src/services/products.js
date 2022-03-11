@@ -18,6 +18,17 @@ export const getProductById = async (id) => {
   };
 }
 
+export const createProduct = async (product) => {
+  const url = `http://localhost:${PORT}/products/`;
+  const response = await fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(product),
+  });
+  const { id } = await response.json();
+  return id;
+};
+
 export const updateProduct = async (id, product) => {
   const url = `http://localhost:${PORT}/products/${id}`;
   await fetch(url, {
