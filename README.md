@@ -1,59 +1,32 @@
 # Teste para candidatos à vaga de Desenvolvedor PHP Júnior
 
-Olá caro desenvolvedor, nesse teste analisaremos seu conhecimento geral e inclusive velocidade de desenvolvimento. Abaixo explicaremos tudo o que será necessário.
+Candidato: Antonio Souza
 
+## Tecnologias Utilizadas:
+  ### Backend:
+    - Node.js
+    - Express-js
+    - MySQL
+  ### Frontend:
+    - React.js + Hooks
+    - Bootstrap
+  ### Containerização:
+    - Docker
+
+
+Essas tecnologias foram escolhidas visando a performance e escalabilidade das tecnologias mais novas.
+
+Usando Node.js pelo seu poder de escalar aplicações pela sua facilidade de lidar com múltiplas requisições pela sua
+característica de ser uma linguagem non-blocking.
+
+Juntamente com o React.js pela caracterísca de componentização, deixando um código muito mais legível, juntamente com a característica de ser uma SPA (Single Page Application), deixando uma melhor experiência para o usuário.
+
+E por fim com o Docker para containerizar a aplicação e garantir sua execução em qualquer ambiente.
 ## Instruções
 
-O desafio consiste em implementar uma aplicação Web utilizando o framework PHP CodeIgniter, e um banco de dados relacional SQLite, MySQL ou Postgres, a partir de uma modelagem de dados inicial desnormalizada, que deve ser normalizada para a implementação da solução.
+Após fazer o clone, entre na pasta raiz do projeto e use o comando `docker-compose up`.
 
-Você vai criar uma aplicação de cadastro de pedidos de compra com as seguintes funcionalidades:
-
-- CRUD de produtos.
-- CRUD de pedidos de compra, com status (Em Aberto, Pago ou Cancelado).
-- Cada CRUD:
-  - deve ser filtrável e ordenável por qualquer campo, e possuir paginação de 20 itens.
-  - deve possuir formulários para criação e atualização de seus itens.
-  - deve permitir a deleção de qualquer item de sua lista.
-- Barra de navegação entre os CRUDs.
-
-## Modelo de dados
-
-A modelagem inicial para a implementação solução é a seguinte:
-
-<img src="img/1.png" title="" alt="">
-
-Neste exemplo estou usando sqlite, mas poderá ser usado Mysql ou Postgre.
-
-Além disso, a implementação deste modelo em um banco de dados relacional deve ser realizada levando em consideração os seguintes requisitos:
-
-## Tecnologias a serem utilizadas
-
-Devem ser utilizadas as seguintes tecnologias:
-
-- HTML
-- CSS
-- Bootstrap
-- Javascript
-- Framework CodeIgniter (PHP)
-
-## Entrega
-
-- Para iniciar o teste, faça um fork deste repositório; **Se você apenas clonar o repositório não vai conseguir fazer push.**
-- Crie uma documentação de como fazer o seu projeto executar
-- Depois de finalizado, enviar o link do seu repositório para felipe@newbgp.com.br ou whats 13988230556 ( Felipe )
-- Preencha o formulário https://forms.gle/oR8zThqgAFS5SckD7 e envie seu currículo.
-
-## Bônus
-
-- Usar Jquery , vuejs , bootstrap 
-- Sugerir mudanças neste teste
-- Vagrant ou Docker
-- Api em REST
-- Comentar o código justificando x padrão framework ou ferramenta
-
-## O que iremos analisar
-
-- Organização do código;
-- Legibilidade;
-
-### Boa sorte!
+O Docker fará os pulls e instalações necessárias e fará os seguintes binds: 
+- website: 3000
+- server: 3001
+- db: 3306
