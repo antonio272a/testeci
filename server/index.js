@@ -43,7 +43,7 @@ app.use((err, _req, res, _next) => {
   return res.status(500).json({ message: err.message })
 })
 
-app.listen(process.env.NODE_LOCAL_PORT, async () => {
-  console.log(`escutando na porta ${process.env.NODE_LOCAL_PORT}`);
+app.listen(process.env.NODE_DOCKER_PORT, async () => {
+  console.log(`escutando na porta ${process.env.NODE_DOCKER_PORT}`);
   await startDB();
 });

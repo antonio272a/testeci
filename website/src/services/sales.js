@@ -1,4 +1,4 @@
-const PORT = process.env.NODE_LOCAL_PORT || 3001;
+const PORT = process.env.NODE_SERVER_PORT || 3001;
 
 export const getAllSales = async () => {
   const url = `http://localhost:${PORT}/sales`;

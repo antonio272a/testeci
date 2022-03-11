@@ -11,7 +11,7 @@ services:
       - $MYSQLDB_LOCAL_PORT:$MYSQLDB_DOCKER_PORT
     volumes:
       - db:/var/lib/mysql
-  app:
+  server:
     depends_on:
       - mysqldb
     build: ./server
@@ -27,5 +27,16 @@ services:
       - DB_PORT=$MYSQLDB_DOCKER_PORT
     stdin_open: true
     tty: true
+  website:
+    depends_on:
+      - server
+      - mysqldb
+    build: ./website
+    restart: unless-stopped
+    env_file: ./.env
+    ports:
+      - $WEBSITE_LOCAL_PORT:3000
+    environment: 
+      - NODE_SERVER_PORT=$NODE_DOCKER_PORT
 volumes: 
   db:
