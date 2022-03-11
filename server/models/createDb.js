@@ -33,7 +33,9 @@ const createSalesTable = async () => {
     quantidade INT NOT NULL,
     valor DOUBLE NOT NULL,
     estado_id INT NOT NULL,
-    FOREIGN KEY (produto_id) REFERENCES Loja.produtos(id),
+    FOREIGN KEY (produto_id) REFERENCES Loja.produtos(id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
     FOREIGN KEY (estado_id) REFERENCES Loja.estados(id)
     ) ENGINE=INNODB;`;
   await connection.execute(query)
@@ -76,11 +78,11 @@ const populateSalesTable = async () => {
 
 const startDB = async () => {
   await createDataBase();
-  await createProductTable();
   await createStatesTable();
-  await createSalesTable();
   await populateStatesTable();
+  await createProductTable();
   await populateProductsTable();
+  await createSalesTable();
   await populateSalesTable();
 }
 

@@ -6,6 +6,12 @@ const getAllProductsModel = async () => {
   return result;
 }
 
+const getProductByIdModel = async (id) => {
+  const query = `SELECT id, nome, fornecedor, preco FROM Loja.produtos WHERE id=?`;
+  const [result] = await connection.execute(query, [id]);
+  return result[0]
+}
+
 const createProductModel = async ({ name, provider, price }) => {
   const query = `INSERT INTO Loja.produtos (nome, fornecedor, preco)
   VALUES (?, ?, ?)`;
@@ -31,4 +37,5 @@ module.exports = {
   deleteProductModel,
   createProductModel,
   updateProductModel,
+  getProductByIdModel,
 };

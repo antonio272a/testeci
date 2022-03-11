@@ -1,6 +1,10 @@
-const { getAllSalesModel, deleteSaleModel, createSaleModel, updateSaleModel } = require("../models/salesModel");
+const { getAllSalesModel, deleteSaleModel, createSaleModel, updateSaleModel, getSaleByKeyModel, getSaleByKeyWithProductModel } = require("../models/salesModel");
 
 const getAllSalesService = async () => getAllSalesModel();
+
+const getSaleByKeyService = async (key) => getSaleByKeyModel(key); 
+
+const getSaleByKeyWithProductService = async (key) => getSaleByKeyWithProductModel(key);
 
 const createSaleService = async (payload) => createSaleModel(payload)
 
@@ -13,4 +17,6 @@ module.exports = {
   deleteSaleService,
   createSaleService,
   updateSaleService,
+  getSaleByKeyService,
+  getSaleByKeyWithProductService,
 };

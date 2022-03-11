@@ -14,14 +14,14 @@ function Products() {
     }
     getProducts();
   }, [])
-  console.log(products);
+
   return (
     <div>
       <Header />
-      <main className=' container d-flex flex-column align-items-center text-center'>
+      <main className='container d-flex flex-column align-items-center text-center'>
         <p className='fs-3 fw-bold my-3'>Produtos</p>
         <section 
-          className='d-flex flex-wrap justify-content-around border boder-2 border-dark p-4 mx-2 align-items-start'
+          className='d-flex flex-wrap justify-content-around border boder-2 border-dark p-4 mx-2 align-items-start w-100'
           style={{minHeight: '100vh'}}
         >
         {products.map((product) => (

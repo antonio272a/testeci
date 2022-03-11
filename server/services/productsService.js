@@ -1,6 +1,8 @@
-const { getAllProductsModel, deleteProductModel, createProductModel, updateProductModel } = require('../models/productsModel');
+const { getAllProductsModel, deleteProductModel, createProductModel, updateProductModel, getProductByIdModel } = require('../models/productsModel');
 
 const getAllProductsService = async () => getAllProductsModel();
+
+const getProductByIdService = async(id) => getProductByIdModel(id);
 
 const createProductService = async (payload) => createProductModel(payload);
 
@@ -13,4 +15,5 @@ module.exports = {
   deleteProductService,
   createProductService,
   updateProductService,
+  getProductByIdService,
 };
